@@ -31,7 +31,7 @@ pipeline {
 			steps {
 					sh "service docker start"
 					sh "rm -rf /mnt/slj/*"
-					sh "docker run -dp 80:90 --name server2 httpd"
+					sh "docker run -dp 90:80 --name server2 httpd"
 					sh "git clone https://github.com/sushil-11-jadhav/9-may.git -b 23Q2"
 					sh "chmod -R 777 /mnt/slj/9-may/index.html"
 					sh "docker cp /mnt/slj/9-may/index.html server2:/usr/local/apache2/htdocs"
@@ -47,7 +47,7 @@ pipeline {
 			steps {
 					sh "sudo service docker start"
 					sh "sudo rm -rf /mnt/sls/*"
-					sh "sudo docker run -dp 80:8081 --name server3 httpd"
+					sh "sudo docker run -dp 8081:80 --name server3 httpd"
 					sh "sudo git clone https://github.com/sushil-11-jadhav/9-may.git -b 23Q3"
 					sh "sudo chmod -R 777 /mnt/sls/9-may/index.html"
 					sh "sudo docker cp /mnt/sls/9-may/index.html server3:/usr/local/apache2/htdocs"
