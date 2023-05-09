@@ -12,7 +12,6 @@ pipeline {
 				
 			}
 		}		
-	}
 		stage ("docker httpd run on JM") {
 			steps {
 					sh "rm -rf /mnt/welcome/*"
