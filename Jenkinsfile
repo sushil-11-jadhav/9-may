@@ -51,5 +51,6 @@ pipeline {
 					sh "sudo chmod -R 777 /mnt/sls/23Q3/index.html"
 					sh "sudo docker cp /mnt/sls/23Q3/index.html server3:/usr/local/apache2/htdocs"
 			}
-		}	
+		}
+	}	
 }		
