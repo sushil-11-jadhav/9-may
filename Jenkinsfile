@@ -17,8 +17,8 @@ pipeline {
 					sh "rm -rf /mnt/welcome/*"
 					sh "docker run -dp 80:80 --name server1 httpd"
 					sh "git clone https://github.com/sushil-11-jadhav/9-may.git -b 23Q1"
-					sh "chmod -R 777 /mnt/welcome/23Q1/index.html"
-					sh "docker cp /mnt/welcome/23Q1/index.html server1:/usr/local/apache2/htdocs"
+					sh "chmod -R 777 /mnt/welcome/9-may/index.html"
+					sh "docker cp /mnt/welcome/9-may/index.html server1:/usr/local/apache2/htdocs"
 			}
 		}
 		stage ("docker httpd run on slave") {
@@ -32,8 +32,8 @@ pipeline {
 					sh "rm -rf /mnt/slj/*"
 					sh "docker run -dp 80:90 --name server2 httpd"
 					sh "git clone https://github.com/sushil-11-jadhav/9-may.git -b 23Q2"
-					sh "chmod -R 777 /mnt/slj/23Q2/index.html"
-					sh "docker cp /mnt/slj/23Q2/index.html server2:/usr/local/apache2/htdocs"
+					sh "chmod -R 777 /mnt/slj/9-may/index.html"
+					sh "docker cp /mnt/slj/9-may/index.html server2:/usr/local/apache2/htdocs"
 			}
 		}
 		stage ("docker httpd run on slave ssh") {
@@ -47,8 +47,8 @@ pipeline {
 					sh "sudo rm -rf /mnt/sls/*"
 					sh "sudo docker run -dp 80:8081 --name server3 httpd"
 					sh "sudo git clone https://github.com/sushil-11-jadhav/9-may.git -b 23Q3"
-					sh "sudo chmod -R 777 /mnt/sls/23Q3/index.html"
-					sh "sudo docker cp /mnt/sls/23Q3/index.html server3:/usr/local/apache2/htdocs"
+					sh "sudo chmod -R 777 /mnt/sls/9-may/index.html"
+					sh "sudo docker cp /mnt/sls/9-may/index.html server3:/usr/local/apache2/htdocs"
 			}
 		}
 	}	
